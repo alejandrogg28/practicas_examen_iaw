@@ -16,9 +16,9 @@
     */
 
     // crear un bucle que recorra 9 líneas
-    for ($asterisco=0; $asterisco <=8 ; $asterisco++) { 
+    for ($linea=0; $linea <=8 ; $linea++) { 
     //Y dentro de él otro bucle que pinte los asteriscos
-        for ($linea=0; $linea <= $asterisco ; $linea++) {
+        for ($asterisco=0; $asterisco <= $linea ; $asterisco++) {
             echo "*"; 
         }
     //Con br hago que por cada vez que el primer for haga una pasada haga un salto de línea
