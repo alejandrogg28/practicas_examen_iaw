@@ -53,13 +53,13 @@ primera hora ese día.-->
         '16:50 - 17:40' => array('','SRI','','ASO',''),
         '17:40 - 18:30' => array('','SRI','','ASO',''),
     );
-
-    $dia = $_POST['dia'];
-    $hora = $_POST['hora']; 
+    
+    $dia = isset($_POST['dia']) ? $_POST['dia'] : "";
+    $hora = isset($_POST['hora']) ? $_POST['hora'] : ""; 
 
     if (!isset($dia) && !isset($hora)) {
         echo "<p>Tienes que introducir el dia y la hora</p>";
-    }elseif ($dia < 5 && $dia >= 0 && $hora != "") {
+    }elseif($dia < 5 && $dia >= 0 && $hora != "") {
         echo "<p>".$dia." es el día escogido.</p> "."<p>".$hora." es la hora escogida</p>";
         $claseEscogida = $horario[$hora];
         echo "<p>La clase que hay en la hora escogida es ".$claseEscogida[$dia]."</p>";
@@ -67,6 +67,7 @@ primera hora ese día.-->
         echo "<p>Se ha producido un error.</p>";
     }
     
+ 
     ?>
 
 
