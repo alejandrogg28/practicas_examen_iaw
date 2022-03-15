@@ -21,13 +21,17 @@ faltan para llegar a la medianoche-->
         $hora=$_POST['hora'];
         $minuto=$_POST['minuto'];
 
-        if (isset($hora) && isset($minuto) && filter_var($hora,FILTER_VALIDATE_INT) && filter_var($minuto,FILTER_VALIDATE_INT)) {
-        
+        if (!isset($hora) && !isset($minuto)) {
+            echo "<p>Tienes que introducir la hora y el minuto/s</p>";
+        }elseif ($hora == "00") {
+            echo "<p>Ya es medianoche</p>";
+        }elseif (isset($hora) && isset($minuto) && filter_var($hora,FILTER_VALIDATE_INT) && filter_var($minuto,FILTER_VALIDATE_INT)) {
             $tiempo_transcurrido=mktime(23,59,59,0,0,0) - mktime($hora,$minuto,0,0,0,0);
             echo "<p>Quedan ".$tiempo_transcurrido." segundos hasta la medianoche";
-        }else {
-            echo "<p>Tienes que introducir la hora y el minuto/s</p>";
         }
+       
+            
+        
 
         
         
