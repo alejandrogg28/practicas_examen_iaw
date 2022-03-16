@@ -9,17 +9,19 @@
 <body>
     
     <form action="<?php echo $_SERVER ['PHP_SELF'];?>" method="post">
-   
-        <label for="euro">EURO</label>          
-        <input type="number" name="euro"/>
-        <input type="submit" value="Calcular" name="euros_dolar"/>
-    </br>
-        <label for="dolar">DÓLAR</label>          
-        <input type="number" name="dolar"/>
-        <input type="submit" value="Calcular" name="dolar_euro"/>
-    </br>
-        
     
+        <p>
+            <label for="euro">Indicar la cantidad de euros </label>          
+            <input type="number" name="euro"/>
+            <input type="submit" value="Calcular" name="euros_dolar"/>
+        </p>
+
+        <p>
+            <label for="dolar">Indicar la cantidad en dólares </label>          
+            <input type="number" name="dolar"/>
+            <input type="submit" value="Calcular" name="dolar_euro"/>
+        </p>
+        
     </form>
 
     <?php
@@ -28,11 +30,9 @@
         $dolar_euro=$_POST['dolar'] * 0.91;
 
         if (isset($_POST['euros_dolar'])) {
-            
             echo "<p>Son ".$euro_dolar." dólares</p>";
         }
         if (isset($_POST['dolar_euro'])) {
-            
             echo "<p>Son ".$dolar_euro." euros</p>";
         }
     
